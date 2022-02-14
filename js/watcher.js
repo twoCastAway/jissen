@@ -4,22 +4,24 @@ new Vue({
       name: '',
       upperName: ''
     },
-    created: function() {
-      this.delayFunc = _.debounce(this.getUpper, 2000)
-    },
+    // created: function() {
+    //   this.delayFunc = _.debounce(this.getUpper, 2000)
+    // },
     // watch: {
     //   name: function(newValue, oldValue) {
     //     this.delayFunc();
     //   }
-    // },
-    computed: {
-      upperName: function(){
-        return this.name.toUpperCase();
-      }
+    // },    
+    created: function(){
+      let that = this;
+      this.delayFunc = _.debounce(this.getUpper, 2000);
+      let unWatch = this.$watch('name', function(newValue, oldValue){
+        that.delayFunc();
+      });
     },
     methods: {
       getUpper: function(){
         this.upperName = this.name.toUpperCase();
       }
-    }
+    },
   });

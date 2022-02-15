@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Vue.js</title>
+</head>
+<body>
+<div id="app">
+    <div id="main" @click.left="onleftclick" @click.right.prevent="onrightclick">
+        右クリック
+    </div>
+    <ul class="cxt" :style="pos" v-show="show">
+        <li><a href="#">ヘルプ</a></li>
+        <li><a href="#">質問箱</a></li>
+        <li><a href="#">よくある質問</a></li>
+    </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="js/event_mousebtn.js"></script>
+</body>
+</html>

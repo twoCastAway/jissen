@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Vue.js</title>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="表示/非表示" @click="onclick" />
+    <transition appear>
+        <div id="panel" v-if="show" key="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptas dolores explicabo libero necessitatibus quos autem? Eveniet amet ipsam nemo sint nostrum, adipisci illo temporibus placeat beatae, dolor sit nam?</div>
+        <div id="empty" v-else key="p2">---------------------</div>
+    </transition>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="js/anim.js"></script>
+</body>
+<style>
+    @keyframes slide-in {
+        0% {
+            transition: translateX(100%);
+        }
+        10% {
+            transition: translateX(20%);
+        }
+        100% {
+            transition: translateX(0%);
+        }
+    }
+    .v-enter-active{
+        animation: slide-in 1.5s;
+    }
+    .v-leave-active{
+        animation: slide-in 1.5s reverse;
+    }
+</style>
+</html>

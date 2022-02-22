@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Vue.js</title>
+</head>
+<body>
+<div id="app">
+    <label for="">名前：<input type="text" v-model="name"></label><br>
+    <select v-model="color">
+        <option value="red">赤色</option>
+        <option value="blue">青色</option>
+        <option value="green">緑色</option>
+    </select>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.<span v-highlight.border.once="color"> Et necessitatibus blanditiis exercitationem excepturi quos optio rem quisquam maiores repellat omnis,</span> in deserunt ipsa ab nisi qui quidem ut obcaecati sapiente!</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="js/dir_mod.js"></script>
+</body>
+</html>
